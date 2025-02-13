@@ -1,11 +1,13 @@
+from pathlib import Path
+import os
 import jiwer
 
-whisper_transcript = input("\nEnter filepath to whisper (hypothesis) transcript:\n")
+whisper_transcript = str(Path(input("\nEnter filepath to whisper (hypothesis) transcript:\n")))
 
 with open(whisper_transcript, 'r') as file:
     hypothesis = file.read()
 
-original_transcript = input("\nEnter filepath to reference transcript:\n")
+original_transcript = str(Path(input("\nEnter filepath to reference transcript:\n")))
 
 with open(original_transcript, 'r') as file:
     reference = file.read()
