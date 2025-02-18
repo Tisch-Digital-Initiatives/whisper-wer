@@ -9,7 +9,7 @@ with open(whisper_transcript, 'r') as file:
 
 original_transcript = str(Path(input("\nEnter filepath to reference transcript:\n")))
 
-with open(original_transcript, 'r') as file:
+with open(original_transcript, 'r', encoding="utf-8") as file:
     reference = file.read()
 
 transforms = jiwer.Compose(
